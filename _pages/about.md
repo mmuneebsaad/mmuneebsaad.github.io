@@ -1,13 +1,8 @@
 ---
-permalink: /
-title: "
-# Welcome
-I am **Muhammad Muneeb Saad**, Lecturer (part-time) in the Department of Computer Science at Munster Technological University (MTU), Cork, Ireland. I specialize in **Generative Adversarial Networks (GANs)**, **Biomedical Image Analysis**, and **Artificial Intelligence for healthcare applications**.  
-This site showcases my **research**, **teaching**, and **publications**."
+layout: archive
+title: "About"
+permalink: /about/
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
 I am Muhammad Muneeb Saad, currently a Lecturer (part-time) in the Department of Computer Science at Munster Technological University (MTU), Cork, Ireland, where I teach modules including Applied/Practical Machine Learning, Computer Architecture, Physical Computing, Linux Administration, and C Programming.  
