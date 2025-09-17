@@ -1,6 +1,9 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "
+# Welcome
+I am **Muhammad Muneeb Saad**, Lecturer (part-time) in the Department of Computer Science at Munster Technological University (MTU), Cork, Ireland. I specialize in **Generative Adversarial Networks (GANs)**, **Biomedical Image Analysis**, and **Artificial Intelligence for healthcare applications**.  
+This site showcases my **research**, **teaching**, and **publications**."
 author_profile: true
 redirect_from: 
   - /about/
