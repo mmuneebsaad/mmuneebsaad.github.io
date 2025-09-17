@@ -1,8 +1,10 @@
 ---
-layout: single
-title: "About"
-permalink: /about/
+permalink: /
+title: "Welcome to my Profile"
 author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
 ---
 
 I am Muhammad Muneeb Saad, currently a Lecturer (part-time) in the Department of Computer Science at Munster Technological University (MTU), Cork, Ireland, where I teach modules including Applied/Practical Machine Learning, Computer Architecture, Physical Computing, Linux Administration, and C Programming.  
