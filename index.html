@@ -8,32 +8,27 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --paper: #FAF6EF;         /* warm ivory */
-      --paper-tint: #F5EFDF;    /* slightly deeper for nav */
-      --ink: #1B1611;           /* warm near-black */
-      --muted: #5F5647;         /* warm taupe, darker for readability */
-      --rule: #E5DBC7;          /* soft sand line */
-      --accent: #2C4A9E;        /* rich cobalt — primary */
-      --accent-2: #B8452E;      /* warm rust — secondary / highlights */
-      --max: 1000px;
+      --paper: #FAF6EF;
+      --paper-tint: #F5EFDF;
+      --ink: #1B1611;
+      --muted: #5F5647;
+      --rule: #E5DBC7;
+      --accent: #2C4A9E;
+      --accent-2: #B8452E;
+      --max: 680px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      margin: 0;
-      padding: 0;
-      background: var(--paper);
-      color: var(--ink);
+      margin: 0; padding: 0;
+      background: var(--paper); color: var(--ink);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
+      font-size: 17px; line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -45,32 +40,23 @@
       text-underline-offset: 3px;
       transition: text-decoration-thickness 120ms ease, color 120ms;
     }
-    a:hover {
-      text-decoration-thickness: 2px;
-      color: var(--accent);
-    }
+    a:hover { text-decoration-thickness: 2px; color: var(--accent); }
 
-    /* -------- Top decorative gradient bar -------- */
     .topbar {
       height: 6px;
       background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
     }
 
-    /* -------- Sticky top nav (table of contents) -------- */
     nav.toc {
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      position: sticky; top: 0; z-index: 10;
       background: var(--paper-tint);
       border-bottom: 1px solid var(--rule);
     }
     nav.toc ul {
-      list-style: none;
-      margin: 0 auto;
+      list-style: none; margin: 0 auto;
       padding: 0.75rem 1.5rem;
       max-width: var(--max);
-      display: flex;
-      gap: 1.25rem;
+      display: flex; gap: 1.25rem;
       font-family: 'JetBrains Mono', ui-monospace, monospace;
       font-size: 0.72rem;
       text-transform: uppercase;
@@ -87,10 +73,7 @@
       transition: color 120ms, border-color 120ms;
       white-space: nowrap;
     }
-    nav.toc a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
+    nav.toc a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
     main {
       max-width: var(--max);
@@ -98,20 +81,42 @@
       padding: 4rem 1.5rem 4rem;
     }
 
+    /* -------- HEADER: photo left, text right -------- */
     header { margin-bottom: 4rem; }
+
+    .header-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.75rem;
+    }
+
+    .headshot {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .header-text {
+      flex: 1;
+      min-width: 0;
+    }
+    /* ------------------------------------------------ */
 
     .name {
       font-family: 'Newsreader', Georgia, serif;
       font-size: 2.5rem;
-      font-weight: 500;
+      font-weight: 600;
       line-height: 1.1;
       margin: 0;
       letter-spacing: -0.01em;
     }
 
     .name-underline {
-      width: 60px;
-      height: 3px;
+      width: 60px; height: 3px;
       background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
       margin: 1rem 0 1.25rem 0;
       border-radius: 2px;
@@ -131,7 +136,7 @@
       font-size: 0.78rem;
       color: var(--muted);
       display: flex;
-      gap: 1.5rem;
+      gap: 1.25rem;
       flex-wrap: wrap;
       align-items: center;
     }
@@ -139,13 +144,10 @@
     .meta a:hover { color: var(--accent-2); }
 
     .meta button {
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
+      background: none; border: none;
+      padding: 0; margin: 0;
       cursor: pointer;
-      font-family: inherit;
-      font-size: inherit;
+      font-family: inherit; font-size: inherit;
       color: var(--accent);
       text-decoration: underline;
       text-decoration-color: var(--accent);
@@ -158,15 +160,9 @@
       color: var(--accent-2);
       text-decoration-color: var(--accent-2);
     }
-    .meta button::before {
-      content: "↓ ";
-      opacity: 0.7;
-    }
+    .meta button::before { content: "↓ "; opacity: 0.7; }
 
-    section {
-      margin: 3.5rem 0;
-      scroll-margin-top: 4rem;
-    }
+    section { margin: 3.5rem 0; scroll-margin-top: 4rem; }
 
     .eyebrow {
       font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -174,18 +170,12 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--accent);
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
+      display: flex; align-items: baseline; gap: 0.5rem;
       margin-bottom: 1.25rem;
       padding-bottom: 0.5rem;
       border-bottom: 1px solid rgba(44, 74, 158, 0.28);
     }
-    .eyebrow::before {
-      content: "§";
-      color: var(--accent-2);
-      opacity: 0.9;
-    }
+    .eyebrow::before { content: "§"; color: var(--accent-2); opacity: 0.9; }
 
     .sub-eyebrow {
       font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -237,6 +227,45 @@
       margin: 0;
       line-height: 1.5;
     }
+    .entry-desc strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .entry-media { margin-top: 0.75rem; }
+    .entry-media figure { margin: 0 0 0.75rem 0; }
+    .entry-media img {
+      max-width: 100%; max-height: 380px; height: auto;
+      display: block;
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+    }
+    .entry-media figcaption {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+      font-style: italic;
+    }
+    .entry-links {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.72rem;
+      display: flex; gap: 1.15rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .entry-links a {
+      color: var(--accent);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--rule);
+      transition: color 120ms, border-color 120ms;
+    }
+    .entry-links a:hover {
+      color: var(--accent-2);
+      border-bottom-color: var(--accent-2);
+    }
+    .entry-links a::before { content: "→ "; opacity: 0.7; }
 
     .placeholder {
       color: var(--accent-2);
@@ -259,6 +288,8 @@
     @media (max-width: 500px) {
       main { padding: 2.5rem 1.25rem 3rem; }
       .name { font-size: 2rem; }
+      .header-inner { gap: 1.25rem; }
+      .headshot { width: 84px; height: 84px; }
       .entry { grid-template-columns: 1fr; gap: 0.25rem; }
       .entry-meta { padding-top: 0; }
     }
@@ -274,91 +305,43 @@
       border-radius: 2px;
     }
 
-    /* =========================================================
-       PRINT / PDF STYLES
-       ========================================================= */
     @media print {
       @page { margin: 0.6in 0.55in; }
-
-      html, body {
-        background: white;
-        color: black;
-        font-size: 10pt;
-        line-height: 1.45;
-      }
-
-      .topbar,
-      nav.toc,
-      .meta button,
-      .colophon {
-        display: none !important;
-      }
-
-      main {
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-      }
-
+      html, body { background: white; color: black; font-size: 10pt; line-height: 1.45; }
+      .topbar, nav.toc, .meta button, .colophon { display: none !important; }
+      main { max-width: 100%; padding: 0; margin: 0; }
       header { margin-bottom: 1rem; }
-      .name { font-size: 20pt; margin: 0; }
-      .name-underline {
-        width: 40px;
-        height: 2px;
-        margin: 0.4rem 0 0.5rem 0;
-        background: #444;
-      }
+      .header-inner { display: flex; gap: 0.35in; align-items: flex-start; }
+      .headshot { width: 0.95in; height: 0.95in; border-radius: 50%; object-fit: cover; }
+      .name { font-size: 20pt; margin: 0; font-weight: 700; }
+      .name-underline { width: 40px; height: 2px; margin: 0.4rem 0 0.5rem 0; background: #444; }
       .tagline { font-size: 10.5pt; margin: 0 0 0.5rem 0; color: #333; }
       .meta { font-size: 8.5pt; gap: 0.75rem; color: #444; }
       .meta a { color: #000; text-decoration: none; }
-
-      section {
-        margin: 1rem 0;
-        break-inside: auto;
-      }
-
-      .eyebrow {
-        font-size: 8.5pt;
-        color: #000;
-        border-bottom: 0.5pt solid #999;
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.2rem;
-        break-after: avoid;
-      }
+      section { margin: 1rem 0; break-inside: auto; }
+      .eyebrow { font-size: 8.5pt; color: #000; border-bottom: 0.5pt solid #999; margin-bottom: 0.5rem; padding-bottom: 0.2rem; break-after: avoid; }
       .eyebrow::before { color: #666; }
-
-      .sub-eyebrow {
-        font-size: 8pt;
-        color: #444;
-        margin: 0.6rem 0 0.2rem 0;
-        break-after: avoid;
-      }
-
-      .entry {
-        padding: 0.35rem 0;
-        border-bottom: 0.5pt solid #DDD;
-        break-inside: avoid;
-        grid-template-columns: 5rem 1fr;
-        gap: 0.6rem;
-      }
-
+      .sub-eyebrow { font-size: 8pt; color: #444; margin: 0.6rem 0 0.2rem 0; break-after: avoid; }
+      .entry { padding: 0.35rem 0; border-bottom: 0.5pt solid #DDD; break-inside: avoid; grid-template-columns: 5rem 1fr; gap: 0.6rem; }
       .entry-title { font-size: 10.5pt; margin: 0 0 0.15rem 0; }
       .entry-title a { color: #000; }
       .entry-desc { font-size: 9pt; color: #333; }
+      .entry-desc strong { color: #000; }
       .entry-meta { font-size: 8pt; color: #666; padding-top: 0.15rem; }
-
       a { color: #000; }
-
       .entry-title a[href^="http"]::after {
-        content: " [" attr(href) "]";
-        font-size: 7.5pt;
-        color: #666;
-        font-weight: normal;
-        font-family: 'JetBrains Mono', monospace;
-        word-break: break-all;
+        content: " [" attr(href) "]"; font-size: 7.5pt; color: #666;
+        font-weight: normal; font-family: 'JetBrains Mono', monospace; word-break: break-all;
       }
-
       .placeholder { color: #999; }
+      .entry-media img { max-width: 2.8in; max-height: 2in; border: 0.5pt solid #999; }
+      .entry-media figcaption { font-size: 7pt; color: #666; }
+      .entry-links { font-size: 8pt; margin-top: 0.25rem; }
+      .entry-links a { color: #000; border-bottom: none; }
+      .entry-links a::after {
+        content: " [" attr(href) "]"; font-size: 7pt; color: #666;
+        font-family: 'JetBrains Mono', monospace; word-break: break-all;
+      }
     }
   </style>
 </head>
@@ -366,59 +349,82 @@
 
   <div class="topbar" aria-hidden="true"></div>
 
-  <!-- =========================================================
-       NAV — sticky at top, links jump to each section.
-       ========================================================= -->
   <nav class="toc" aria-label="Sections">
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#talks">Talks</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#supervision">Supervision</a></li>
       <li><a href="#awards">Awards</a></li>
-      <li><a href="#service">Service</a></li>
-      <li><a href="#elsewhere">Elsewhere</a></li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- =========================================================
-         HEADER
-         ========================================================= -->
     <header>
-      <h1 class="name">Dr Muhammad Muneeb Saad</h1>
-      <div class="name-underline" aria-hidden="true"></div>
-      <p class="tagline">Senior Researcher in Generative AI at Munster Technological University, Cork.</p>
-      <div class="meta">
-        <a href="mailto:muhammadmuneeb.saad@mtu.ie">muhammadmuneeb.saad@mtu.ie</a>
-        <button type="button" onclick="window.print()" title="Opens your browser's print dialog — choose 'Save as PDF' to download">Download PDF</button>
-        <a href="https://github.com/mmuneebsaad">github.com/mmuneebsaad</a>
-        <a href="https://scholar.google.com/citations?user=0IpB0aUAAAAJ&hl=en">Google Scholar</a>
-        <a href="https://orcid.org/0000-0002-0204-0597">ORCID</a>
+      <div class="header-inner">
+        <img class="headshot" src="images/headshot.jpg" alt="Dr Muhammad Muneeb Saad" onerror="this.style.display='none'" />
+        <div class="header-text">
+          <h1 class="name">Dr Muhammad Muneeb Saad</h1>
+          <div class="name-underline" aria-hidden="true"></div>
+          <p class="tagline">Senior Researcher in Generative AI at Munster Technological University, Cork.</p>
+          <div class="meta">
+            <a href="mailto:muhammadmuneeb.saad@mtu.ie">muhammadmuneeb.saad@mtu.ie</a>
+            <a href="mailto:mmuneeb.saad@gmail.com">mmuneeb.saad@gmail.com</a>
+            <button type="button" onclick="window.print()" title="Opens your browser's print dialog — choose 'Save as PDF' to download">Download PDF</button>
+            <a href="https://github.com/mmuneebsaad">GitHub</a>
+            <a href="https://www.linkedin.com/in/muhammad-muneeb-saad-pak123456/">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=0IpB0aUAAAAJ&hl=en">Google Scholar</a>
+            <a href="https://orcid.org/0000-0002-0204-0597">ORCID</a>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- =========================================================
-         ABOUT
-         ========================================================= -->
     <section id="about" class="about">
       <div class="eyebrow">About</div>
       <h2>About</h2>
       <p>I'm a Senior Researcher in Generative AI in the Department of Computer Science at Munster Technological University (MTU), Cork, and part-time lecturer across the Departments of Computer Science and Mathematics. I'm affiliated with <a href="https://lero.ie">Lero</a> — the Research Ireland Centre for Software — and <a href="https://www.adaptcentre.ie">ADAPT</a> — the Research Ireland Centre for AI-Driven Digital Content Technology.</p>
       <p>I hold a PhD in Computing from MTU (2025), on training challenges of Generative Adversarial Networks for biomedical image synthesis, supervised by Dr Ruairi O'Reilly and Dr Mubashir Husain Rehmani. Before that I completed an MSc in Electrical Engineering — Deep Learning and Time Series Analytics — at COMSATS University Islamabad, Pakistan.</p>
       <p>My current work spans GAN architecture design and training stability, low-resource neural machine translation for Irish, and evaluation frameworks for generative model quality and diversity. I'm a contributor to the open-source <em>adaptMLLM</em> framework for Irish–English NMT.</p>
+      <p>Beyond research and teaching, I serve as Associate Editor at <em>Engineering Reports</em> (Wiley) and as peer reviewer for <em>Biomedical Signal Processing and Control</em> (Elsevier) and <em>Artificial Intelligence Review</em> (Springer).</p>
     </section>
 
-    <!-- =========================================================
-         NEWS
-         Keep newest items at the top. To add a new item, copy an
-         entry block, change the date and content, and paste it
-         above the others. Delete old items when the list gets long.
-         ========================================================= -->
+    <section id="education">
+      <div class="eyebrow">Education</div>
+      <h2>Education</h2>
+
+      <article class="entry">
+        <div class="entry-meta">2020 – 2025</div>
+        <div>
+          <h3 class="entry-title">PhD in Computing</h3>
+          <p class="entry-desc">Munster Technological University (MTU), Cork, Ireland. Major: Generative Adversarial Networks and Biomedical Image Analysis. Thesis: <em>Addressing Training Challenges of Generative Adversarial Networks for Biomedical Image Synthesis</em>. Supervisors: Dr Ruairi O'Reilly and Dr Mubashir Husain Rehmani. Funded by the Risam Scholarship Award (President of MTU). Awarded the Lero Director's Prize 2024 for outstanding PhD research contribution.</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">2016 – 2018</div>
+        <div>
+          <h3 class="entry-title">MSc in Electrical Engineering</h3>
+          <p class="entry-desc">COMSATS University Islamabad, Abbottabad Campus, Pakistan. Major: Deep Learning and Time Series Analytics. Thesis: <em>Fraud Detection using Recurrent Neural Networks</em>.</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">2012 – 2016</div>
+        <div>
+          <h3 class="entry-title">BSc in Electrical (Telecommunication) Engineering</h3>
+          <p class="entry-desc">Gomal University, Dera Ismail Khan, Pakistan. Thesis: <em>Arduino-based Condition Monitoring of Different Parameters of Distribution Transformer</em>.</p>
+        </div>
+      </article>
+    </section>
+
     <section id="news">
       <div class="eyebrow">News &amp; Updates</div>
       <h2>News</h2>
@@ -458,15 +464,12 @@
       <article class="entry">
         <div class="entry-meta">2024</div>
         <div>
-          <h3 class="entry-title">Awarded the Lero Director's Prize 2024</h3>
-          <p class="entry-desc">Recognised for outstanding PhD research contribution by the Director of Lero, the Research Ireland Centre for Software.</p>
+          <h3 class="entry-title"><a href="https://www.mtu.ie/news/mtu-researcher-lero-director-prize-/">Awarded the Lero Director's Prize 2024</a></h3>
+          <p class="entry-desc">Recognised for outstanding PhD research contribution by the Director of Lero, the Research Ireland Centre for Software. Also covered by <a href="https://www.radiokerry.ie/news/mtu-researcher-wins-prestigious-award-417888">Radio Kerry</a>.</p>
         </div>
       </article>
     </section>
 
-    <!-- =========================================================
-         RESEARCH
-         ========================================================= -->
     <section id="research">
       <div class="eyebrow">Research</div>
       <h2>Research</h2>
@@ -496,9 +499,58 @@
       </article>
     </section>
 
-    <!-- =========================================================
-         PUBLICATIONS
-         ========================================================= -->
+    <section id="projects">
+      <div class="eyebrow">Projects</div>
+      <h2>Projects</h2>
+
+      <article class="entry">
+        <div class="entry-meta">Current</div>
+        <div>
+          <h3 class="entry-title">Advancing adaptMLLM for Irish–English NMT</h3>
+          <p class="entry-desc">Ongoing work at MTU extending the open-source <em>adaptMLLM</em> fine-tuning framework to improve neural machine translation for the Irish language. Building on large language model and sequence-to-sequence architectures to advance Irish–English and English–Irish translation, tackling data scarcity, morphological complexity in Irish, and domain adaptation for specialised text. Aligned with Ireland's Official Languages Act and the national research agenda.</p>
+          <div class="entry-media">
+            <div class="entry-links">
+              <a href="#"><span class="placeholder">GitHub repo</span></a>
+              <a href="#"><span class="placeholder">Documentation</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">PhD</div>
+        <div>
+          <h3 class="entry-title">Addressing training challenges of GANs for biomedical imaging</h3>
+          <p class="entry-desc">My doctoral research at MTU tackling several major challenges in training Generative Adversarial Networks for X-ray image synthesis, delivered across three stages:</p>
+          <p class="entry-desc" style="margin-top: 0.5rem;"><strong>Stage 1 — Adaptive Input Image Normalisation.</strong> A novel normalisation technique that solves the intra-class mode collapse problem in GAN training on biomedical images (published in EMBC 2022 and extended in BSPC 2025).</p>
+          <p class="entry-desc" style="margin-top: 0.5rem;"><strong>Stage 2 — MSG-SAGAN.</strong> A self-attention guided multi-scale gradient GAN architecture for diversified X-ray image synthesis (published in AICS 2023).</p>
+          <p class="entry-desc" style="margin-top: 0.5rem;"><strong>Stage 3 — Early Stopping Criteria.</strong> Original stopping criteria to improve training stability in GAN training loops for biomedical imaging (published in ISSC 2024).</p>
+          <p class="entry-desc" style="margin-top: 0.5rem;">All implemented from scratch in Python with TensorFlow and PyTorch — including custom training loops, loss functions, and evaluation pipelines.</p>
+          <div class="entry-media">
+            <div class="entry-links">
+              <a href="#"><span class="placeholder">GitHub repo</span></a>
+              <a href="https://doi.org/10.1016/j.bspc.2025.108333">Stage 1 paper</a>
+              <a href="https://doi.org/10.1007/978-3-031-26438-2_2">Stage 2 paper</a>
+              <a href="https://doi.org/10.1109/ISSC61953.2024.10603268">Stage 3 paper</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">MSc</div>
+        <div>
+          <h3 class="entry-title">Fraud Detection using Recurrent Neural Networks</h3>
+          <p class="entry-desc">My Master's thesis at COMSATS University Islamabad, Abbottabad Campus. Explored recurrent neural network architectures to detect fraudulent transactions in time-series data, part of my major in Deep Learning and Time Series Analytics.</p>
+          <div class="entry-media">
+            <div class="entry-links">
+              <a href="#"><span class="placeholder">GitHub repo</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
     <section id="publications">
       <div class="eyebrow">Selected Publications</div>
       <h2>Selected Publications</h2>
@@ -509,7 +561,7 @@
         <div class="entry-meta">2025</div>
         <div>
           <h3 class="entry-title"><a href="https://doi.org/10.1016/j.bspc.2025.108333">Adaptive input-image normalization for solving the mode collapse problem in GAN-based X-ray images</a></h3>
-          <p class="entry-desc">Saad, M.M., et al. — Biomedical Signal Processing and Control (Elsevier).</p>
+          <p class="entry-desc"><strong>Saad, M.M.</strong>, et al. — Biomedical Signal Processing and Control (Elsevier).</p>
         </div>
       </article>
 
@@ -517,7 +569,7 @@
         <div class="entry-meta">2024</div>
         <div>
           <h3 class="entry-title"><a href="https://doi.org/10.1007/s10462-023-10624-y">A Survey on Training Challenges in Generative Adversarial Networks for Biomedical Image Analysis</a></h3>
-          <p class="entry-desc">Saad, M.M., et al. — Artificial Intelligence Review, 57(19), Springer.</p>
+          <p class="entry-desc"><strong>Saad, M.M.</strong>, et al. — Artificial Intelligence Review, 57(19), Springer.</p>
         </div>
       </article>
 
@@ -527,7 +579,7 @@
         <div class="entry-meta">2024</div>
         <div>
           <h3 class="entry-title"><a href="https://doi.org/10.1109/ISSC61953.2024.10603268">Early Stopping Criteria for Training Generative Adversarial Networks in Biomedical Imaging</a></h3>
-          <p class="entry-desc">Saad, M.M., et al. — 35th Irish Signals and Systems Conference (ISSC), IEEE.</p>
+          <p class="entry-desc"><strong>Saad, M.M.</strong>, et al. — 35th Irish Signals and Systems Conference (ISSC), IEEE.</p>
         </div>
       </article>
 
@@ -535,7 +587,7 @@
         <div class="entry-meta">2023</div>
         <div>
           <h3 class="entry-title"><a href="https://doi.org/10.1007/978-3-031-26438-2_2">A Self-attention Guided Multi-scale Gradient GAN for Diversified X-ray Image Synthesis</a></h3>
-          <p class="entry-desc">Saad, M.M., et al. — Artificial Intelligence and Cognitive Science (AICS), Springer.</p>
+          <p class="entry-desc"><strong>Saad, M.M.</strong>, et al. — Artificial Intelligence and Cognitive Science (AICS), Springer.</p>
         </div>
       </article>
 
@@ -543,7 +595,7 @@
         <div class="entry-meta">2022</div>
         <div>
           <h3 class="entry-title"><a href="https://doi.org/10.1109/EMBC48229.2022.9871260">Addressing the Intra-class Mode Collapse Problem using Adaptive Input Image Normalization in GAN-based X-ray Images</a></h3>
-          <p class="entry-desc">Saad, M.M., et al. — 44th Annual International Conference of the IEEE EMBC.</p>
+          <p class="entry-desc"><strong>Saad, M.M.</strong>, et al. — 44th Annual International Conference of the IEEE EMBC.</p>
         </div>
       </article>
 
@@ -553,7 +605,7 @@
         <div class="entry-meta">2024</div>
         <div>
           <h3 class="entry-title">Classification of Stress via Ambulatory ECG and GSR Data</h3>
-          <p class="entry-desc">Dair, Z., Saad, M.M., Pawar, U., O'Reilly, R., &amp; Dockray, S. — in <em>Human Activity</em>, CRC Press.</p>
+          <p class="entry-desc">Dair, Z., <strong>Saad, M.M.</strong>, Pawar, U., O'Reilly, R., &amp; Dockray, S. — in <em>Human Activity</em>, CRC Press.</p>
         </div>
       </article>
 
@@ -561,48 +613,89 @@
         <div class="entry-meta">2023</div>
         <div>
           <h3 class="entry-title"><a href="https://doi.org/10.1007/978-3-031-46341-9_4">Evaluating the Quality and Diversity of DCGAN-Based Generatively Synthesized Diabetic Retinopathy Imagery</a></h3>
-          <p class="entry-desc">Dragan, C.M., Saad, M.M., Rehmani, M., &amp; O'Reilly, R. — in <em>Advances in Deep Generative Models for Medical AI</em>, Springer.</p>
+          <p class="entry-desc">Dragan, C.M., <strong>Saad, M.M.</strong>, Rehmani, M., &amp; O'Reilly, R. — in <em>Advances in Deep Generative Models for Medical AI</em>, Springer.</p>
         </div>
       </article>
     </section>
 
-    <!-- =========================================================
-         INVITED TALKS — PLACEHOLDER
-         Send me your talk details (year, title, venue, location,
-         evidence link) and I'll fill these in properly.
-         ========================================================= -->
+    <section id="blog">
+      <div class="eyebrow">Blog</div>
+      <h2>Blog</h2>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="placeholder">[Month Year]</span></div>
+        <div>
+          <h3 class="entry-title"><a href="#"><span class="placeholder">[Post title]</span></a></h3>
+          <p class="entry-desc"><span class="placeholder">One or two sentences describing what the post is about.</span></p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="placeholder">[Month Year]</span></div>
+        <div>
+          <h3 class="entry-title"><a href="#"><span class="placeholder">[Post title]</span></a></h3>
+          <p class="entry-desc"><span class="placeholder">One or two sentences describing what the post is about.</span></p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="placeholder">[Month Year]</span></div>
+        <div>
+          <h3 class="entry-title"><a href="#"><span class="placeholder">[Post title]</span></a></h3>
+          <p class="entry-desc"><span class="placeholder">One or two sentences describing what the post is about.</span></p>
+        </div>
+      </article>
+    </section>
+
     <section id="talks">
       <div class="eyebrow">Invited Talks</div>
       <h2>Invited Talks</h2>
 
       <article class="entry">
-        <div class="entry-meta"><span class="placeholder">[Year]</span></div>
+        <div class="entry-meta">Feb 2026</div>
         <div>
-          <h3 class="entry-title"><a href="#"><span class="placeholder">[Talk title]</span></a></h3>
-          <p class="entry-desc"><span class="placeholder">[Event / venue name]. [Location or online]. [Optional one-line context — audience, format, or role].</span></p>
+          <h3 class="entry-title">Innovations in Generative AI: From General Breakthroughs to GANs in Medical Imaging</h3>
+          <p class="entry-desc">Invited lecture at the College of Computing Research Symposium, Euro University of Bahrain (EUB), Bahrain.</p>
+          <div class="entry-media">
+            <div class="entry-links">
+              <a href="https://eub.edu.bh/brochure-college-of-computing-research-symposium/">Event brochure</a>
+              <a href="#"><span class="placeholder">Slides</span></a>
+              <a href="#"><span class="placeholder">Photos</span></a>
+            </div>
+          </div>
         </div>
       </article>
 
       <article class="entry">
-        <div class="entry-meta"><span class="placeholder">[Year]</span></div>
+        <div class="entry-meta">May 2025</div>
         <div>
-          <h3 class="entry-title"><a href="#"><span class="placeholder">[Talk title]</span></a></h3>
-          <p class="entry-desc"><span class="placeholder">[Event / venue name]. [Location or online]. [Optional one-line context].</span></p>
+          <h3 class="entry-title">Innovations in AI, ML &amp; Data Science: From General Breakthroughs to GANs in Medical Imaging</h3>
+          <p class="entry-desc">Keynote at the International Conclave on Engineering Sciences and Technology (PACE Conclave 2025 / Artelligence 2025). PA College of Engineering (PACE), Mangalore, India.</p>
+          <div class="entry-media">
+            <div class="entry-links">
+              <a href="#"><span class="placeholder">Event page</span></a>
+              <a href="#"><span class="placeholder">Slides</span></a>
+              <a href="#"><span class="placeholder">Photos</span></a>
+            </div>
+          </div>
         </div>
       </article>
 
       <article class="entry">
-        <div class="entry-meta"><span class="placeholder">[Year]</span></div>
+        <div class="entry-meta">Feb 2022</div>
         <div>
-          <h3 class="entry-title"><a href="#"><span class="placeholder">[Talk title]</span></a></h3>
-          <p class="entry-desc"><span class="placeholder">[Event / venue name]. [Location or online]. [Optional one-line context].</span></p>
+          <h3 class="entry-title">Addressing the Intra-class Mode Collapse Problem using Adaptive Input Image Normalization in GAN-based X-ray Images</h3>
+          <p class="entry-desc">MTU Computer Science Seminar Series, Munster Technological University, Cork, Ireland.</p>
+          <div class="entry-media">
+            <div class="entry-links">
+              <a href="https://cs.cit.ie/cs-seminar-series">Seminar series</a>
+              <a href="#"><span class="placeholder">Slides</span></a>
+            </div>
+          </div>
         </div>
       </article>
     </section>
 
-    <!-- =========================================================
-         TEACHING
-         ========================================================= -->
     <section id="teaching">
       <div class="eyebrow">Teaching</div>
       <h2>Teaching</h2>
@@ -640,12 +733,6 @@
       </article>
     </section>
 
-    <!-- =========================================================
-         SUPERVISION — PLACEHOLDER
-         Send me student names (if you're comfortable listing
-         them) and thesis topics. If you'd rather not name them,
-         I'll frame each entry around the research topic instead.
-         ========================================================= -->
     <section id="supervision">
       <div class="eyebrow">Supervision</div>
       <h2>Supervision</h2>
@@ -667,9 +754,6 @@
       </article>
     </section>
 
-    <!-- =========================================================
-         AWARDS
-         ========================================================= -->
     <section id="awards">
       <div class="eyebrow">Awards &amp; Recognition</div>
       <h2>Awards and Recognition</h2>
@@ -679,6 +763,12 @@
         <div>
           <h3 class="entry-title">Lero Director's Prize</h3>
           <p class="entry-desc">Awarded by the Director of Lero (Research Ireland Centre for Software) in recognition of outstanding PhD research contribution.</p>
+          <div class="entry-media">
+            <div class="entry-links">
+              <a href="https://www.mtu.ie/news/mtu-researcher-lero-director-prize-/">MTU News</a>
+              <a href="https://www.radiokerry.ie/news/mtu-researcher-wins-prestigious-award-417888">Radio Kerry</a>
+            </div>
+          </div>
         </div>
       </article>
 
@@ -696,76 +786,6 @@
           <h3 class="entry-title"><a href="https://scholar.google.com/citations?user=0IpB0aUAAAAJ&hl=en">Google Scholar</a></h3>
           <p class="entry-desc">250+ citations · h-index 7 · i10-index 6.</p>
         </div>
-      </article>
-    </section>
-
-    <!-- =========================================================
-         SERVICE
-         ========================================================= -->
-    <section id="service">
-      <div class="eyebrow">Service</div>
-      <h2>Service</h2>
-
-      <article class="entry">
-        <div class="entry-meta">Editor</div>
-        <div>
-          <h3 class="entry-title">Associate Editor, Engineering Reports</h3>
-          <p class="entry-desc">Wiley.</p>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">Review</div>
-        <div>
-          <h3 class="entry-title">Peer Reviewer</h3>
-          <p class="entry-desc">Biomedical Signal Processing and Control (Elsevier); Artificial Intelligence Review (Springer).</p>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">Affiliate</div>
-        <div>
-          <h3 class="entry-title">Research affiliations</h3>
-          <p class="entry-desc">Lero — Research Ireland Centre for Software (2020 – present). ADAPT — Research Ireland Centre for AI-Driven Digital Content Technology (2023 – present).</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- =========================================================
-         ELSEWHERE
-         ========================================================= -->
-    <section id="elsewhere">
-      <div class="eyebrow">Elsewhere</div>
-      <h2>Elsewhere</h2>
-
-      <article class="entry">
-        <div class="entry-meta">Work</div>
-        <div><a href="mailto:muhammadmuneeb.saad@mtu.ie">muhammadmuneeb.saad@mtu.ie</a></div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">Personal</div>
-        <div><a href="mailto:mmuneeb.saad@gmail.com">mmuneeb.saad@gmail.com</a></div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">GitHub</div>
-        <div><a href="https://github.com/mmuneebsaad">github.com/mmuneebsaad</a></div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">LinkedIn</div>
-        <div><a href="https://www.linkedin.com/in/muhammad-muneeb-saad-pak123456/">linkedin.com/in/muhammad-muneeb-saad-pak123456</a></div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">Scholar</div>
-        <div><a href="https://scholar.google.com/citations?user=0IpB0aUAAAAJ&hl=en">Google Scholar profile</a></div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">ORCID</div>
-        <div><a href="https://orcid.org/0000-0002-0204-0597">0000-0002-0204-0597</a></div>
       </article>
     </section>
 
