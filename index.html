@@ -44,7 +44,12 @@
     a:hover { text-decoration-thickness: 2px; color: var(--accent); }
 
     nav.toc {
-      margin: 0 0 2.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: var(--paper);
+      margin: 0 0 2rem 0;
+      padding: 1rem 0;
       font-size: 0.95rem;
       line-height: 2.1;
     }
