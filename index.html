@@ -44,9 +44,9 @@
     a:hover { text-decoration-thickness: 2px; color: var(--accent); }
 
     nav.toc {
-      margin: 2rem 0 0 0;
-      font-size: 0.9rem;
-      line-height: 1.9;
+      margin: 0 0 2.5rem 0;
+      font-size: 0.95rem;
+      line-height: 2.1;
     }
     nav.toc ul {
       list-style: none;
@@ -54,8 +54,8 @@
       padding: 0;
     }
     nav.toc li {
-      display: block;
-      margin: 0;
+      display: inline;
+      margin-right: 0.35rem;
     }
     nav.toc li::before { content: "["; color: var(--muted); }
     nav.toc li::after { content: "]"; color: var(--muted); }
@@ -383,14 +383,6 @@
         flex-wrap: wrap;
         align-items: center;
       }
-      nav.toc {
-        margin: 1.5rem 0 0 0;
-        line-height: 2.1;
-      }
-      nav.toc li {
-        display: inline;
-        margin-right: 0.35rem;
-      }
     }
 
     @media (max-width: 500px) {
@@ -509,6 +501,10 @@
         <a href="https://scholar.google.com/citations?user=0IpB0aUAAAAJ&hl=en">Google Scholar</a>
         <a href="https://orcid.org/0000-0002-0204-0597">ORCID</a>
       </div>
+    </header>
+
+    <div class="content">
+
       <nav class="toc" aria-label="Sections">
         <ul>
           <li><a href="#about">About</a></li>
@@ -524,9 +520,6 @@
           <li><a href="#awards">Awards</a></li>
         </ul>
       </nav>
-    </header>
-
-    <div class="content">
 
       <section id="about" class="about">
       <div class="eyebrow">About</div>
