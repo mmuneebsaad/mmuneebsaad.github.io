@@ -1,1 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asset or gambling token? What leading economists actually say about Bitcoin — Dr Muhammad Muneeb Saad</title>
+  <meta name="description" content="A researcher's summary of what world-leading economists — Warren Buffett, Paul Krugman, Nouriel Roubini, Eugene Fama, Steve Hanke — and the European Central Bank actually say about Bitcoin's economic function and intrinsic value." />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /*
+      Shared styles — kept in sync with index.html and blog.html.
+      When the site grows, extract this block into styles.css.
+    */
+
+    :root {
+      --paper: #FAF6EF;
+      --paper-tint: #F5EFDF;
+      --ink: #1B1611;
+      --muted: #5F5647;
+      --rule: #E5DBC7;
+      --accent: #2C4A9E;
+      --accent-2: #B8452E;
+      --max: 1000px;
+      --prose: 42rem;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; padding: 0;
+      background: var(--paper); color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 17px; line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: text-decoration-thickness 120ms ease, color 120ms;
+    }
+    a:hover { text-decoration-thickness: 2px; color: var(--accent); }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem 4rem;
+    }
+
+    .site-name {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: -0.005em;
+    }
+    .site-name:hover { color: var(--accent); }
+
+    nav.toc {
+      margin: 1rem 0 3rem 0;
+      font-size: 0.95rem;
+      line-height: 2.1;
+    }
+    nav.toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav.toc li {
+      display: inline;
+      margin-right: 0.35rem;
+    }
+    nav.toc li::before { content: "["; color: var(--muted); }
+    nav.toc li::after { content: "]"; color: var(--muted); }
+    nav.toc a {
+      color: var(--accent);
+      text-decoration: none;
+      padding: 0 0.05rem;
+      transition: color 120ms;
+    }
+    nav.toc a:hover {
+      color: var(--accent-2);
+      text-decoration: underline;
+      text-decoration-color: var(--accent-2);
+      text-underline-offset: 3px;
+    }
+    nav.toc a.current {
+      color: var(--accent-2);
+      font-weight: 500;
+    }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      display: flex; align-items: baseline; gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .eyebrow::before { content: "§"; color: var(--accent-2); opacity: 0.9; }
+
+    /* Post header */
+    .post-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 2.35rem;
+      font-weight: 600;
+      line-height: 1.15;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.01em;
+      max-width: var(--prose);
+    }
+    .post-byline {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .post-byline span:not(:last-child)::after { content: "·"; margin-left: 0.75rem; color: var(--rule); }
+
+    /* Hero */
+    .post-hero {
+      margin: 0 0 3rem 0;
+    }
+    .post-hero img {
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+
+    /* Prose */
+    .post-body {
+      max-width: var(--prose);
+    }
+    .post-body p {
+      margin: 0 0 1.25rem 0;
+    }
+    .post-body .lede {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .expert-list {
+      list-style: none;
+      counter-reset: expert;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+    .expert-list > li {
+      counter-increment: expert;
+      position: relative;
+      padding: 1rem 0 1rem 3rem;
+      border-bottom: 1px dotted var(--rule);
+      line-height: 1.55;
+    }
+    .expert-list > li:last-child { border-bottom: none; }
+    .expert-list > li::before {
+      content: counter(expert, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .expert-list .expert-name {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .expert-list .expert-name em { color: var(--muted); font-weight: 500; font-style: normal; }
+
+    .callout {
+      margin: 2.5rem 0;
+      padding: 1.5rem 1.75rem;
+      border-left: 3px solid var(--accent);
+      background: var(--paper-tint);
+      border-radius: 0 4px 4px 0;
+    }
+    .callout .callout-label {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .callout p { margin: 0; }
+
+    .kicker {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--accent-2);
+      margin: 2.5rem 0 2rem 0;
+      padding: 1rem 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+    }
+
+    /* References */
+    .references {
+      max-width: var(--prose);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    .references h2 {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin: 0 0 1rem 0;
+    }
+    .references h2::before { content: "§ "; color: var(--accent-2); opacity: 0.9; }
+    .references ol {
+      padding-left: 1.5rem;
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .references ol li { margin-bottom: 0.6rem; }
+    .references-pending {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
+      color: var(--accent-2);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .counterview {
+      margin: 1.75rem 0 0 0;
+      padding: 1rem 1.25rem;
+      background: var(--paper-tint);
+      border-left: 2px solid var(--muted);
+      border-radius: 0 4px 4px 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .counterview strong {
+      color: var(--ink);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: inline-block;
+      margin-right: 0.35rem;
+    }
+
+    /* Author byline block */
+    .author-block {
+      max-width: var(--prose);
+      margin: 2.5rem 0 0 0;
+      padding: 1.25rem 0 0 0;
+      border-top: 1px solid var(--rule);
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .author-block strong { color: var(--ink); font-weight: 600; }
+
+    /* Tags */
+    .post-tags {
+      max-width: var(--prose);
+      margin: 2rem 0 0 0;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .post-tags span::before { content: "#"; opacity: 0.6; }
+
+    /* Bottom nav */
+    .post-nav {
+      max-width: var(--prose);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.8rem;
+    }
+    .post-nav a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .post-nav a::before { content: "← "; }
+    .post-nav a:hover { color: var(--accent-2); }
+
+    /* Footer */
+    .colophon {
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .colophon a { color: var(--muted); text-decoration-color: var(--rule); }
+    .colophon a:hover { color: var(--accent); }
+
+    @media (max-width: 500px) {
+      main { padding: 2.5rem 1.25rem 3rem; }
+      .post-title { font-size: 1.75rem; }
+      .expert-list > li { padding-left: 2.25rem; }
+      .callout { padding: 1.25rem; }
+      .kicker { font-size: 1.15rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <a href="../index.html" class="site-name">Dr Muhammad Muneeb Saad</a>
+
+    <nav class="toc" aria-label="Sections">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#news">News</a></li>
+        <li><a href="../index.html#research">Research</a></li>
+        <li><a href="../index.html#publications">Publications</a></li>
+        <li><a class="current" href="../blog.html">Blog</a></li>
+        <li><a href="../index.html#talks">Talks</a></li>
+        <li><a href="../index.html#teaching">Teaching</a></li>
+        <li><a href="../index.html#awards">Awards</a></li>
+      </ul>
+    </nav>
+
+    <article>
+
+      <div class="eyebrow">Blog · Financial Literacy</div>
+      <h1 class="post-title">🎰 Asset or gambling token? What leading economists actually say about Bitcoin.</h1>
+
+      <div class="post-byline">
+        <span>Sep 2026</span>
+        <span>Dr Muhammad Muneeb Saad</span>
+        <span>4 min read</span>
+      </div>
+
+      <figure class="post-hero">
+        <img src="../images/blog/bitcoin-experts.jpg" alt="Illustration of a Bitcoin coin surrounded by radiating coloured lines, with the caption &lsquo;Bitcoin in the Eyes of World-Leading Experts&rsquo;" />
+      </figure>
+
+      <div class="post-body">
+
+        <p class="lede">As researchers, we are trained to follow the evidence and the expert literature. On cryptocurrency, the verdict from many of the world's most credentialed economists and investors is strikingly critical.</p>
+
+        <ol class="expert-list">
+          <li>
+            <span class="expert-name">Warren Buffett <em>(2023)</em>:</span>
+            "Bitcoin is a gambling token, and it doesn't have any intrinsic value" — it generates no earnings, dividends, or cash flow; its price depends solely on the next buyer.
+          </li>
+          <li>
+            <span class="expert-name">Paul Krugman, <em>Nobel Laureate</em>:</span>
+            After 15+ years, Bitcoin "remains economically useless," with illicit finance among its dominant applications.
+          </li>
+          <li>
+            <span class="expert-name">Nouriel Roubini <em>(NYU, 2018 US Senate testimony)</em>:</span>
+            Bitcoin fails all three classical functions of money — unit of account, means of payment, and store of value — calling much of crypto "a Ponzi game. A scam."
+          </li>
+          <li>
+            <span class="expert-name">Eugene Fama, <em>Nobel Laureate</em>:</span>
+            Assigns Bitcoin's long-term collapse a probability "close to 100%," citing lack of intrinsic value and reliance on belief rather than fundamentals.
+          </li>
+          <li>
+            <span class="expert-name">Steve Hanke <em>(Johns Hopkins)</em>:</span>
+            Bitcoin has zero fundamental value — no cash flows, no state backing, purely speculative pricing.
+          </li>
+          <li>
+            <span class="expert-name">European Central Bank:</span>
+            Bitcoin lacks intrinsic value and fails the Misesian Regression Theorem of money.
+          </li>
+        </ol>
+
+        <div class="callout">
+          <span class="callout-label">🔬 The scientific takeaway</span>
+          <p>Unlike productive assets, Bitcoin has no physical backing, generates no output, and its valuation rests on sentiment alone — properties economists associate with speculative bubbles and gambling, not currency. Proponents dispute this framing, but retail investors should understand that the downside case is endorsed by Nobel laureates and central banks — and most late buyers in past cycles suffered heavy losses.</p>
+        </div>
+
+        <p class="kicker">⚠️ Invest in knowledge before you invest in tokens.</p>
+
+      </div>
+
+      <div class="references">
+        <h2>References</h2>
+        <ol>
+          <li>Buffett, W. (2023). Remarks, CNBC interview / Berkshire Hathaway. Via Cointelegraph: <a href="https://cointelegraph.com/news/bitcoin-is-a-gambling-token-and-it-doesn-t-have-any-intrinsic-value-warren-buffett">"Bitcoin is a gambling token and it doesn't have any intrinsic value" — Warren Buffett</a>.</li>
+          <li>Krugman, P. (2024). Commentary on crypto policy, <em>The New York Times</em>. Via TheStreet: <a href="https://www.thestreet.com/crypto/markets/paul-krugman-donald-trump-bitcoin-ponzi-scheme">Paul Krugman on Donald Trump and the Bitcoin "Ponzi scheme"</a>.</li>
+          <li>Roubini, N. (2018). Testimony before the US Senate Committee on Banking, Housing and Urban Affairs, "Exploring the Cryptocurrency and Blockchain Ecosystem," 11 October 2018. <a href="https://www.banking.senate.gov/imo/media/doc/Roubini%20Testimony%2010-11-18.pdf">Written testimony (PDF)</a>.</li>
+          <li>Roubini, N. (2023). Interview at the World Economic Forum, Davos. <em>Yahoo Finance</em>: <a href="https://finance.yahoo.com/news/nouriel-roubini-crypto-scam-144628068.html">"Nouriel Roubini: crypto is a scam"</a>.</li>
+          <li>Fama, E. (2025). On Bitcoin's long-term prospects. <em>CCN</em>: <a href="https://www.ccn.com/education/crypto/bitcoin-price-warning-nobel-economist-eugene-fama-btc-crash-zero/">Nobel economist Eugene Fama warns Bitcoin could crash to zero</a>.</li>
+          <li>Hanke, S. (2025). On Bitcoin's fundamental value. <em>CCN</em>: <a href="https://www.ccn.com/education/crypto/bitcoin-zero-fundamental-value-economist-steve-hanke-btc-price-risk-warning/">Steve Hanke on Bitcoin's zero fundamental value</a>.</li>
+          <li>European Central Bank (2012). <em>Virtual Currency Schemes</em>. Frankfurt am Main: European Central Bank, October 2012. <a href="https://www.ecb.europa.eu/pub/pdf/other/virtualcurrencyschemes201210en.pdf">Report (PDF)</a>. The Misesian Regression Theorem discussion appears in the section on Bitcoin's monetary aspects.</li>
+        </ol>
+
+        <p class="counterview">
+          <strong>Counterview:</strong> Krause, D. (2025). <em>Were the Leading Economists' Criticisms of Crypto Wrong? A Current Examination of Bitcoin and Digital Assets.</em> Marquette University, SSRN working paper. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5277960">SSRN preprint</a>. Presents updated counterarguments to the critiques cited above, in light of institutional adoption and regulatory evolution.
+        </p>
+      </div>
+
+      <div class="author-block">
+        <p><strong>Reported by — Dr Muhammad Muneeb Saad</strong><br>
+        Senior Researcher, Generative AI &amp; Machine Translation<br>
+        ADAPT Research Centre, Munster Technological University, Cork, Ireland</p>
+      </div>
+
+      <div class="post-tags" aria-label="Tags">
+        <span>bitcoin</span>
+        <span>cryptocurrency</span>
+        <span>economics</span>
+        <span>financial-literacy</span>
+        <span>research-insights</span>
+        <span>fintech</span>
+      </div>
+
+      <div class="post-nav">
+        <a href="../blog.html">Back to all posts</a>
+      </div>
+
+    </article>
+
+    <footer class="colophon">
+      <span>© Muhammad Muneeb Saad, 2026 · <a href="../index.html">Home</a> · Cork, Ireland</span>
+      <span>Set in Newsreader &amp; Inter</span>
+    </footer>
+
+  </main>
+
+  <script>
+    // Open external links in a new tab.
+    document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+  </script>
+</body>
+</html>
