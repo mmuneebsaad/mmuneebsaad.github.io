@@ -44,9 +44,9 @@
     a:hover { text-decoration-thickness: 2px; color: var(--accent); }
 
     nav.toc {
-      margin: 0 0 3.5rem 0;
-      font-size: 0.95rem;
-      line-height: 2.1;
+      margin: 2rem 0 0 0;
+      font-size: 0.9rem;
+      line-height: 1.9;
     }
     nav.toc ul {
       list-style: none;
@@ -54,8 +54,8 @@
       padding: 0;
     }
     nav.toc li {
-      display: inline;
-      margin-right: 0.35rem;
+      display: block;
+      margin: 0;
     }
     nav.toc li::before { content: "["; color: var(--muted); }
     nav.toc li::after { content: "]"; color: var(--muted); }
@@ -75,10 +75,30 @@
     main {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 4rem 1.5rem 4rem;
+      padding: 3rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    header { margin-bottom: 4rem; }
+    .content {
+      min-width: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 2rem;
+      align-self: start;
+      max-height: calc(100vh - 4rem);
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--rule) transparent;
+    }
+    header::-webkit-scrollbar { width: 4px; }
+    header::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 2px; }
+    header::-webkit-scrollbar-track { background: transparent; }
 
     .headshot {
       width: var(--headshot-size);
@@ -95,9 +115,9 @@
 
     .name {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 2.5rem;
+      font-size: 1.85rem;
       font-weight: 600;
-      line-height: 1.1;
+      line-height: 1.15;
       margin: 0;
       letter-spacing: -0.01em;
     }
@@ -116,9 +136,9 @@
       font-size: 0.78rem;
       color: var(--muted);
       display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
     }
     .meta a { text-decoration-color: var(--rule); }
     .meta a:hover { color: var(--accent-2); }
@@ -345,6 +365,34 @@
       gap: 1rem;
     }
 
+    @media (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      header {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+        margin-bottom: 1rem;
+      }
+      .meta {
+        flex-direction: row;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      nav.toc {
+        margin: 1.5rem 0 0 0;
+        line-height: 2.1;
+      }
+      nav.toc li {
+        display: inline;
+        margin-right: 0.35rem;
+      }
+    }
+
     @media (max-width: 500px) {
       main { padding: 2.5rem 1.25rem 3rem; }
       .name { font-size: 2rem; }
@@ -374,13 +422,13 @@
       @page { margin: 0.6in 0.55in; }
       html, body { background: white; color: black; font-size: 10pt; line-height: 1.45; }
       nav.toc, .meta button, .colophon { display: none !important; }
-      main { max-width: 100%; padding: 0; margin: 0; }
-      header { margin-bottom: 1rem; }
+      main { max-width: 100%; padding: 0; margin: 0; display: block; }
+      header { margin-bottom: 1rem; position: static; overflow: visible; max-height: none; padding-right: 0; }
       .headshot { width: 1.15in; height: 1.15in; border-radius: 50%; overflow: hidden; margin-bottom: 0.2in; }
       .headshot img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; transform: scale(1.4); transform-origin: center 22%; }
       .name { font-size: 20pt; margin: 0; font-weight: 700; }
       .tagline { font-size: 10.5pt; margin: 0 0 0.5rem 0; color: #333; }
-      .meta { font-size: 8.5pt; gap: 0.75rem; color: #444; }
+      .meta { font-size: 8.5pt; gap: 0.75rem; color: #444; flex-direction: row; flex-wrap: wrap; }
       .meta a { color: #000; text-decoration: none; }
       section { margin: 1rem 0; break-inside: auto; }
       .eyebrow { font-size: 8.5pt; color: #000; border-bottom: 0.5pt solid #999; margin-bottom: 0.5rem; padding-bottom: 0.2rem; break-after: avoid; }
@@ -461,25 +509,26 @@
         <a href="https://scholar.google.com/citations?user=0IpB0aUAAAAJ&hl=en">Google Scholar</a>
         <a href="https://orcid.org/0000-0002-0204-0597">ORCID</a>
       </div>
+      <nav class="toc" aria-label="Sections">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#talks">Talks</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#supervision">Supervision</a></li>
+          <li><a href="#awards">Awards</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav class="toc" aria-label="Sections">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#talks">Talks</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#supervision">Supervision</a></li>
-        <li><a href="#awards">Awards</a></li>
-      </ul>
-    </nav>
+    <div class="content">
 
-    <section id="about" class="about">
+      <section id="about" class="about">
       <div class="eyebrow">About</div>
       <h2>About</h2>
       <p>I'm a Senior Researcher in Generative AI in the Department of Computer Science at Munster Technological University (MTU), Cork, and part-time lecturer across the Departments of Computer Science and Mathematics. I'm affiliated with <a href="https://lero.ie">Lero</a> — the Research Ireland Centre for Software — and <a href="https://www.adaptcentre.ie">ADAPT</a> — the Research Ireland Centre for AI-Driven Digital Content Technology.</p>
@@ -851,6 +900,8 @@
       <span>© Muhammad Muneeb Saad, 2026 · Cork, Ireland</span>
       <span>Set in Newsreader &amp; Inter</span>
     </footer>
+
+    </div>
 
   </main>
 
