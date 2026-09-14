@@ -1,0 +1,6 @@
+# Allow all search engines to crawl everything on the site.
+User-agent: *
+Allow: /
+
+# Point crawlers at the sitemap so they discover all pages.
+Sitemap: https://mmuneebsaad.github.io/sitemap.xml
